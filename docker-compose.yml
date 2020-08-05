@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  apigateways.api:
+    image: ${DOCKER_REGISTRY-}apigatewaysapi
+    depends_on:
+        - beer.api
+        - identity.api
+    build:
+      context: .
+      dockerfile: src/ApiGateways/ApiGateways.API/Dockerfile
+
+  beer.api:
+    image: ${DOCKER_REGISTRY-}beerapi
+    build:
+      context: .
+      dockerfile: src/Services/Beer/Beer.API/Dockerfile
+
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: src/Services/Identity/Identity.API/Dockerfile
+
