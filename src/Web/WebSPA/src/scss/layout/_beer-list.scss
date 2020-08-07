@@ -1,0 +1,15 @@
+app-beer-list{
+    .table-header{
+        display: flex;
+        align-items: center;
+        mat-form-field{
+            width: 40%;
+            .mat-form-field-wrapper{
+                padding-bottom: 0;
+            }
+        }
+    }
+    table{
+        width: 100%;
+    }
+}
