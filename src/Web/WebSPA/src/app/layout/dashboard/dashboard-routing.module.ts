@@ -7,8 +7,9 @@ const routes: Routes = [
     path : '',
     component : DashboardComponent,
     children : [
-      { path : 'beer', loadChildren: () => import('./content/beer/beer.module').then(m => m.BeerModule) },
-      { path : 'store', loadChildren: () => import('./content/store/store.module').then(m => m.StoreModule) },
+      { path: '', redirectTo: 'beers', pathMatch: 'full' },
+      { path: 'beers', loadChildren: () => import('./content/beer/beer.module').then(m => m.BeerModule) },
+      { path: 'stores', loadChildren: () => import('./content/store/store.module').then(m => m.StoreModule) },
     ]
   }
 ];

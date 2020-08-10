@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-store-list',
-  templateUrl: './store-list.component.html',
-  styleUrls: ['./store-list.component.scss']
+  templateUrl: './store-list.component.html'
 })
 export class StoreListComponent implements OnInit {
 
