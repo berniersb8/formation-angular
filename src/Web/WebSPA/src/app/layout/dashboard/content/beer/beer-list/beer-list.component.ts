@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class BeerListComponent implements OnInit {
   public showLoading: boolean = false;
-  public displayedColumns: string[] = ['id', 'name', 'description', 'type'];
+  public displayedColumns: string[] = ['id', 'name', 'description'];
   public dataSource = new MatTableDataSource<BeerModel>([]);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
