@@ -1,4 +1,13 @@
 app-beer-list{
+    mat-progress-bar{
+        margin-bottom: 8px;
+    }
+    .empty-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
     .table-header{
         display: flex;
         align-items: center;
