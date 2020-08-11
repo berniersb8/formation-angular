@@ -6,7 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { BeerFormComponent } from '../beer-form/beer-form.component';
 
-
 @Component({
   selector: 'app-beer-list',
   templateUrl: './beer-list.component.html'
