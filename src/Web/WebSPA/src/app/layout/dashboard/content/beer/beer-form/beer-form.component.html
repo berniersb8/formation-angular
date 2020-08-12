@@ -4,7 +4,7 @@
   name="beerForm"
   (ngSubmit)="beerForm.valid && onSubmit()"
 >
-  <h1 mat-dialog-title>Nouvelle bière</h1>
+  <h1 mat-dialog-title>{{ beer.id == null ? "Nouvelle bière" : "Modifier bière"}}</h1>
   <div mat-dialog-content>
     <mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Nom</mat-label>
@@ -45,6 +45,6 @@
     >
       Sauvegarder
     </button>
-    <button mat-button type="button" mat-dialog-close>Anuller</button>
+    <button mat-button type="button" mat-dialog-close="cancel">Anuller</button>
   </div>
 </form>

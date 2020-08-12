@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BeerModel, getDefaultBeerModel } from 'src/app/model/beer.model';
+import { BeerService } from 'src/app/service/beer.service';
 
 @Component({
   selector: 'app-beer-form',
@@ -11,6 +12,7 @@ export class BeerFormComponent implements OnInit {
   public beer: BeerModel = getDefaultBeerModel();
 
   constructor(
+    private beerService: BeerService,
     public dialogRef: MatDialogRef<BeerFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BeerModel
   ) {
@@ -22,6 +24,10 @@ export class BeerFormComponent implements OnInit {
   ngOnInit(): void {}
 
   public onSubmit(): void {
-    console.log();
+    this.showLoading = true;
+    this.beerService.save(this.beer).subscribe(() => {
+      this.showLoading = false;
+      this.dialogRef.close();
+    }, () => this.showLoading = false);
   }
 }

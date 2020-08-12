@@ -1,3 +1,4 @@
+import { ConfirmDialogComponent } from './../../../../../shared/component/confirm-dialog/confirm-dialog.component';
 import { BeerModel } from './../../../../../model/beer.model';
 import { BeerService } from './../../../../../service/beer.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -5,6 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { BeerFormComponent } from '../beer-form/beer-form.component';
+import { ConfirmDialogModel } from 'src/app/shared/component/confirm-dialog/confirm-dialog.model';
 
 @Component({
   selector: 'app-beer-list',
@@ -12,14 +14,14 @@ import { BeerFormComponent } from '../beer-form/beer-form.component';
 })
 export class BeerListComponent implements OnInit {
   public showLoading: boolean = false;
-  public displayedColumns: string[] = ['id', 'name', 'description'];
+  public displayedColumns: string[] = ['id', 'name', 'description', 'actions'];
   public dataSource = new MatTableDataSource<BeerModel>([]);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private beerService: BeerService, public dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.refreshBeerTable();
   }
 
@@ -38,14 +40,36 @@ export class BeerListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  public openDialog(): void {
+  public openFormDialog(beer: BeerModel = null): void {
     const dialogRef = this.dialog.open(BeerFormComponent, {
       width: '400px',
-      disableClose: true
+      disableClose: true,
+      data: beer
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result !== 'cancel') {
+        this.refreshBeerTable();
+      }
+    });
+  }
+
+  public openConfirmDeletedialog(id: number): void {
+    const confirmDialogModel: ConfirmDialogModel = {
+      title: 'Confirmation',
+      message: 'Êtes-vous sûre de vouloir supprimer cette bière?'
+    };
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      disableClose: true,
+      data: confirmDialogModel
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'yes') {
+        this.beerService.delete(id).subscribe(() => this.refreshBeerTable());
+      }
     });
   }
 }

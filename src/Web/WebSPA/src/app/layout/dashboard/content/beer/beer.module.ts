@@ -1,3 +1,4 @@
+import { SharedModule } from './../../../../shared/shared.module';
 import { BeerFormComponent } from './beer-form/beer-form.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -26,7 +29,10 @@ import { FormsModule } from '@angular/forms';
     MatProgressBarModule,
     MatDialogModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatTooltipModule,
+    SharedModule
   ],
   declarations: [BeerListComponent, BeerFormComponent],
   providers: [BeerService]
