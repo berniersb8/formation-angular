@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{ confirmDialogModel.title }}</h1>
+<div mat-dialog-content>
+  <p>
+    {{ confirmDialogModel.message }}
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button
+    class="red"
+    type="button"
+    mat-button
+    cdkFocusInitial
+    mat-dialog-close="yes"
+  >
+    Oui
+  </button>
+  <button mat-button type="button" mat-dialog-close="no">Non</button>
+</div>

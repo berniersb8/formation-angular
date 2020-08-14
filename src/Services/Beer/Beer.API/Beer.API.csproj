@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Beer.Persistence\Beer.Persistence.csproj" />
     <ProjectReference Include="..\Beer.Domain\Beer.Domain.csproj" />
   </ItemGroup>
 

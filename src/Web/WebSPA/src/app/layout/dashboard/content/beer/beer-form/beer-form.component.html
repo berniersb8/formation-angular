@@ -1,0 +1,50 @@
+<mat-progress-bar *ngIf="showLoading" mode="query"></mat-progress-bar>
+<form
+  #beerForm="ngForm"
+  name="beerForm"
+  (ngSubmit)="beerForm.valid && onSubmit()"
+>
+  <h1 mat-dialog-title>{{ beer.id == null ? "Nouvelle bière" : "Modifier bière"}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Nom</mat-label>
+      <input
+        disabled="{{ showLoading }}"
+        required
+        name="name"
+        matInput
+        #nameInput="ngModel"
+        [(ngModel)]="beer.name"
+      />
+      <mat-error *ngIf="nameInput.hasError('required')"
+        >Ce champ est requis.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Description</mat-label>
+      <textarea
+        disabled="{{ showLoading }}"
+        required
+        name="description"
+        matInput
+        #descriptionInput="ngModel"
+        [(ngModel)]="beer.description"
+      ></textarea>
+      <mat-error *ngIf="descriptionInput.hasError('required')"
+        >Ce champ est requis.</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      disabled="{{ showLoading }}"
+      class="primary"
+      type="submit"
+      mat-button
+      cdkFocusInitial
+    >
+      Sauvegarder
+    </button>
+    <button mat-button type="button" mat-dialog-close="cancel">Anuller</button>
+  </div>
+</form>

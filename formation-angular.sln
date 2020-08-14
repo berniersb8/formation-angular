@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9116E6CF-5818-45C4-A4E1-1509663FD2F9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3E07C05C-935E-4822-8E2F-4F10165334E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{47CDF39A-E74B-47A6-B5EA-AE1208E864FE}"
@@ -27,26 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beer.Domain", "src\Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Domain", "src\Services\Identity\Identity.Domain\Identity.Domain.csproj", "{7A2DA1D8-EDDA-4EF0-BDE5-82F3A4092964}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSPA", "src\Web\WebSPA\", "{92505550-E578-458B-8EE2-D1CD35ACA250}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_57694"
-		Debug.AspNetCompiler.PhysicalPath = "src\Web\WebSPA\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57694\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_57694"
-		Release.AspNetCompiler.PhysicalPath = "src\Web\WebSPA\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57694\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "57694"
-		SlnRelativePath = "src\Web\WebSPA\"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beer.Persistence", "..\Beer.Persistence\Beer.Persistence.csproj", "{AFC20130-703E-48D4-AC67-CADD996EA312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,10 +57,10 @@ Global
 		{7A2DA1D8-EDDA-4EF0-BDE5-82F3A4092964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A2DA1D8-EDDA-4EF0-BDE5-82F3A4092964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A2DA1D8-EDDA-4EF0-BDE5-82F3A4092964}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92505550-E578-458B-8EE2-D1CD35ACA250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92505550-E578-458B-8EE2-D1CD35ACA250}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92505550-E578-458B-8EE2-D1CD35ACA250}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{92505550-E578-458B-8EE2-D1CD35ACA250}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{AFC20130-703E-48D4-AC67-CADD996EA312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC20130-703E-48D4-AC67-CADD996EA312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC20130-703E-48D4-AC67-CADD996EA312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC20130-703E-48D4-AC67-CADD996EA312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,7 +73,7 @@ Global
 		{3D9F5D63-C460-42DC-A5AB-DA0706DD2CD3} = {47CDF39A-E74B-47A6-B5EA-AE1208E864FE}
 		{93CD2EEB-8177-4D4B-AAFA-5DE24467FF44} = {73FA7BD4-DD99-486F-A152-02D5E1024489}
 		{7A2DA1D8-EDDA-4EF0-BDE5-82F3A4092964} = {413781DE-B0F6-4A2C-8034-99F46DA24525}
-		{92505550-E578-458B-8EE2-D1CD35ACA250} = {9116E6CF-5818-45C4-A4E1-1509663FD2F9}
+		{AFC20130-703E-48D4-AC67-CADD996EA312} = {73FA7BD4-DD99-486F-A152-02D5E1024489}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E869420-8C64-451F-9E6D-E78FECB9BF59}
